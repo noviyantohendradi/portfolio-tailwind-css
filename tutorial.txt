@@ -1,0 +1,123 @@
+Instalasi Tailwind
+Ctrl Backtick (Ctrl `) = Buka Terminal
+npm init -y
+
+Hasil dibuatkan package.json
+{
+  "name": "portfolio-tailwind-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+---
+Ikuti instalasi TailwindCSS: https://tailwindcss.com/docs/installation
+
+npm install -D tailwindcss
+
+npx tailwindcss init 
+Dibuatkan tailwind.cofig.js
+
+open tailwind.cofig.js (modifikasi bagian content. Karena hanya 1 file yang dimodifikasi isinya yaitu index.html
+
+module.exports = {
+  content: ['index.html'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+3. Tambahkan directive nya
+caranya, buat input.css berikut isikan spt dibawah dan letakkan di folder src
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+4. Start the Tailwind CLI build process
+(SELALU JALANI INI SAAT START MAU CODDING AWAL, kalau Error, juga reStart ini lagi)
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+
+5. Start using Tailwind in your HTML (src/index.html)
+Ingat index.html diletakkan pada folder src
+Add your compiled CSS file to the <head> and start using Tailwind’s utility classes to style your content.
+
+<link href="/dist/output.css" rel="stylesheet" />
+
+Masuk ke Hero Section
+
+Buat BLOB Maker
+https://www.blobmaker.app/
+
+di input.css =
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// mengubah fonts didalam file html ke Inter
+body {
+  font-family: "Inter", sans-serif;
+}
+
+// custom class
+// mengkondisikan diawal spesifikasi menu hamburger sebelum di klik, see button at index.html
+.hamburger-line {
+  @apply w-[30px] h-[2px] my-2 block bg-dark transition duration-300 ease-in-out;
+}
+
+// mengatur kondisi yg terjadi jika diklik pd menu hamburger
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+==== Upload di GitHub Pages
+Create Repository
+noviyantohendradi/portfolio-tailwind-css
+
+Masuk di VS Code, (Ctrl BackTig) masuk Terminal, jika watch nya TailwindCSS masih jalan , stop dulu dengan melakukan Ctrl C dan Y
+
+Folder kita akan jadi Repository ya:
+D:\LatWebUnpas\belajar-tailwind\portfolio-tailwind-css
+
+Buat file .gitignore diluar, fungsinya kita mengabaikan (ignore) / menahan/ tidak mengupload folder / file apa saja yang tercantum didalam file .gitignore ini.
+Kita tidak mengupload Folder node_modules , karena isinya banyak. Yang kita butuhkan hanyalah Folder dist saja. Tetapi kali ini kita upload semuanya kecuali node_modules
+
+Lalu masukkan di terminal sbb :
+git init
+git add .
+git commit -m 'portfolio tailwind css'
+git branch -M main
+git remote add origin https://github.com/noviyantohendradi/portfolio-tailwind-css.git
+git push -u origin main
+
+
+Setelah diatas, supaya bisa diakses online buat GitHubPages, masuk ke Settings, pilih di sisi kiri Pages.
+
+Source, klik Branch main, file index di root nya. Klik Save
+Lalu tersedia alamat webste yang siap diakses secara publish online (umum)
+
+
+echo "# portfolio-tailwind-css" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/noviyantohendradi/portfolio-tailwind-css.git
+git push -u origin main
+
