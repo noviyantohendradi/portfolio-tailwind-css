@@ -157,3 +157,9 @@ https://tailwindcss.com/docs/optimizing-for-production
 
 Kita buat minify 
 npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
+
+---Update darkmode portfolio ini ke github---
+git add .
+git commit -m 'update darkmode toggledan perbaikan fitur penting'
+git push -u origin main
+
