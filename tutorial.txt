@@ -106,6 +106,12 @@ git branch -M main
 git remote add origin https://github.com/noviyantohendradi/portfolio-tailwind-css.git
 git push -u origin main
 
+Jika terjadi erro ditolak reject oleh akun sebelumnya, Solusinya masuk ke Control Panel Windows
+masuk ke Windows Credentials > Generic Credential > git.https > Hapus Akun nya ya Guys.
+
+Cek Penjelasannya ke:
+https://stackoverflow.com/questions/47465644/github-remote-permission-denied
+
 
 Setelah diatas, supaya bisa diakses online buat GitHubPages, masuk ke Settings, pilih di sisi kiri Pages.
 
@@ -121,3 +127,33 @@ git branch -M main
 git remote add origin https://github.com/noviyantohendradi/portfolio-tailwind-css.git
 git push -u origin main
 
+----DARK MODE------
+Jangan lupa run selalu
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+Tambahkan Prettier Pluggin CSS 
+Pakai Headwind extension saja, yg ini ngga jalan prettier nya
+Fungsinya untuk membantu mengurutkan merapikan class class tailwindCSS supaya bila kerjasama tim mudah terurut rapi 
+https://tailwindcss.com/blog/automatic-class-sorting-with-prettier
+
+Misal: 
+Sebelum install prettier-plugin-tailwindcss
+
+<h2 class="font-bold text-dark text-3xl mb-3 max-w-md lg:text-4xl">Yuk mulai bisnis Jersey, kebutuhan bahan Midios sediakan </h2>
+
+Sesudah install prettier-plugin-tailwindcss (diurutkan class2nya jadi enak baca, & collabs tim enak)
+
+
+
+cara installnya sbb:
+npm i -D prettier prettier-plugin-tailwindcss
+
+artinya kita menginstall 2 node modules ke dalam aplikasi kita:
+1. menginstall prettier dalam aplikasi kita (dulu install aplikas prettier di VSCode)
+2. Dan prettier-pluggin-tailwindcss
+
+---Cara Optimize File Css setelah final----
+https://tailwindcss.com/docs/optimizing-for-production
+
+Kita buat minify 
+npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
