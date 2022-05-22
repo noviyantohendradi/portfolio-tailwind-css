@@ -160,6 +160,6 @@ npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
 
 ---Update darkmode portfolio ini ke github---
 git add .
-git commit -m 'update darkmode toggledan perbaikan fitur penting'
+git commit -m 'update darkmode toggle dan perbaikan fitur penting'
 git push -u origin main
 
